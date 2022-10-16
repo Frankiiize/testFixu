@@ -1,4 +1,6 @@
-
+section{
+  height: calc(100vh - 20px);
+}
 
 .card{
   width: 95%;
@@ -11,29 +13,56 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 20px;
-    border-top-left-radius: 10px;
-    border-top-right-radius: 10px;
+    border-radius: 10px;
+    padding: 10px 20px;
     h1{
-      color: $bg-white;
-    }
-    .cross::after{
-      content: 'x';
+      font-family: $fontFamily;
+      text-transform: uppercase;
       color: $bg-white;
       font-size: 30px;
-      
+    }
+    &__close{
+      padding: 5px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      button { 
+        width: 24px;
+        height: 16px;
+        background-color: transparent;
+        border: none;
+        outline: none;
+        position: relative;
+        div{
+          position: absolute;
+          width: 100%;
+          transform: rotate(0);
+          transition: 200ms;
+          height: 3px;
+          background-color: $bg-white;
+        }
+        div:nth-child(1){
+          transform: rotate(45deg);
+        }
+        div:nth-child(2){
+          transform: rotate(-45deg);
+        }
+      }
     }
   }
   &__formContainer{
+    margin-top: -10px;
     display: flex;
     flex-direction: column;
     background-color: $bg-white;
     width: 100%;
     border-radius: 10px;
+    overflow: hidden;
     &__form{
+      font-family: $fontFamily;
       width: 85%;
       height: 50%;
-      margin: 0 auto;
+      margin: 10px auto;
       display: flex;
       flex-direction: column;
       &__label.mdc-text-field{
@@ -47,8 +76,10 @@
         .line.mdc-line-ripple::before, .line.mdc-text-field--filled:not(.mdc-text-field--disabled).line.mdc-line-ripple::before{
           border-color: $color-primary;
         }
+      
         span{
-          text-transform: capitalize;
+          color: black !important;
+          text-transform: uppercase;
         }
       }
       &__check{
@@ -56,17 +87,49 @@
         .mdc-checkbox__checkmark-path{
           stroke: $color-primary;
         }
+        .mdc-checkbox__background, .mdc-checkbox__ripple{
+          width: 80%;
+          height: 80%;
+          top: 50%;
+          transform: translate(-50%, -50%);
+        }
+      
         .mdc-checkbox 
         .mdc-checkbox__native-control:enabled:not(:checked):not(:indeterminate):not([data-indeterminate=true]) ~
         .mdc-checkbox__background{
-          border-radius: 5px;
+          border-radius: 10px;
+          width: 80%;
+          height: 80%;
+          top: 50%;
+          transform: translate(-50%, -50%);
           border-color: $color-secondary;
+          background-color: $color-secondary-bg;
         }
         span {
+          text-transform: capitalize;
+          font-size: 14px;
           display: flex;
           justify-content: space-between;
           align-items: center;
-         
+          font-weight: 500;
+          a, a:visited, a:active, a:hover {
+            color: $color-primary;
+            margin-left: 5px;
+          }
+        }
+      }
+      &__btn{
+        width: 100%;
+        min-height: 50px;
+        button{
+          width: 100%;
+          height: 100%;
+          border-radius: 8px;
+        }
+        .labelBtn.mdc-button__label{
+          font-weight: 700;
+          font-size: 20px;
+          letter-spacing: 1.5;
         }
       }
     }
@@ -74,11 +137,57 @@
       width: 100%;
       height: 400px;
       overflow: hidden;
+      border-radius: 10px;
       img{
         width: 100%;
+        max-height: 100%;
         object-fit: cover;
+        overflow: hidden;
       }
     }
   }
 }
 
+@media (min-width: 760px) {
+  .card {
+    max-width: 95%;
+    height: inherit;
+    grid-template-rows: 120px 1fr;
+    &__title {
+    padding: 10px 50px;
+
+      h1{
+        font-size: 40px;
+      }
+    }
+    &__formContainer{
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      grid-template-rows: 1fr;
+    
+      &__form{
+        height: 100%;
+        width: 80%;
+        justify-content: space-evenly;
+        &__btn{
+          height: 80px;
+          margin: 0 auto;
+          .labelBtn.mdc-button__label{
+            font-size: 32px;
+          }
+        }
+        &__check  {
+          display: flex;
+          align-items: center;
+          
+        }
+      }
+      &__img{
+        display: flex;
+        width: 100%;
+        height: 100%;
+      }
+    }
+  }
+  
+}

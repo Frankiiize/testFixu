@@ -1,8 +1,10 @@
+
 @use "@material/theme" with (
   $primary: #ffd136,
   $secondary: #f8a000,
   $background: #fff,
 );
+
 
 @use "@material/button/styles";
 @use "@material/floating-label/mdc-floating-label";
@@ -10,6 +12,7 @@
 @use "@material/notched-outline/mdc-notched-outline";
 @use "@material/textfield/mdc-text-field";
 @use "@material/checkbox/mdc-checkbox";
+@use "@material/typography/mdc-typography";
 @import './variables';
 @import './form';
 

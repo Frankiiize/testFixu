@@ -8,24 +8,31 @@
     <title>Webpack 4 StarterKit</title>
     <link rel="stylesheet" href="css/main.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Roboto&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;700&display=swap" rel="stylesheet">
 </head>
 
 <body>
 
   <main>
-    <section>
+    <section >
       <div class="card">
         <div class="card__tittle">
-          <h1>contáctanos</h1>
-          <span class="cross"></span>
+          <h1 >contáctanos</h1>
+          <div class="card__tittle__close">
+
+            <button class="">
+              <div ></div>
+              <div ></div>
+            </button>
+          </div>
         </div>
         <div class="card__formContainer">
           <form class="card__formContainer__form">
             <label class="card__formContainer__form__label mdc-text-field mdc-text-field--filled username">
               <span class="mdc-text-field__ripple"></span>
-              <span class="mdc-floating-label" id="my-label-id">nombre</span>
+              <span class="placeholder mdc-floating-label" id="my-label-id">nombre</span>
               <input class="mdc-text-field__input" type="text" aria-labelledby="my-label-id">
               <span class="line mdc-line-ripple"></span>
             </label>
@@ -43,7 +50,7 @@
             </label>
             <label class="card__formContainer__form__label mdc-text-field mdc-text-field--filled phone">
               <span class="mdc-text-field__ripple"></span>
-              <span class="mdc-floating-label" id="my-label-id">+569</span>
+              <span class="mdc-floating-label" id="my-label-id">teléfono (+569...)</span>
               <input class="mdc-text-field__input" type="tel" aria-labelledby="my-label-id">
               <span class="line mdc-line-ripple"></span>
             </label>
@@ -53,7 +60,6 @@
               <input class="mdc-text-field__input" type="email" aria-labelledby="my-label-id">
               <span class="line mdc-line-ripple"></span>
             </label>
-            <label class=" mdc-text-field ">
 
               <div class="card__formContainer__form__check  mdc-touch-target-wrapper">
                 <div class="mdc-checkbox mdc-checkbox--touch">
@@ -78,11 +84,10 @@
                   </a>
                 </span>
               </div>
-            </label>
 
-            <div class="mdc-touch-target-wrapper">
+            <div class="card__formContainer__form__btn mdc-touch-target-wrapper">
               <button class="mdc-button mdc-button--raised">
-                <span class="mdc-button__label">Contained Button</span>
+                <span class="labelBtn mdc-button__label">contáctanos</span>
               </button>
             </div>
 
