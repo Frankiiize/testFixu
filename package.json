@@ -35,6 +35,7 @@
   },
   "dependencies": {
     "@material/button": "^14.0.0",
+    "@material/checkbox": "^14.0.0",
     "@material/textfield": "^14.0.0"
   }
 }
