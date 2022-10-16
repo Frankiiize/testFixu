@@ -1,11 +1,19 @@
-@use "@material/button/styles";
+@use "@material/theme" with (
+  $primary: #ffd136,
+  $secondary: #f8a000,
+  $background: #fff,
+);
 
+@use "@material/button/styles";
 @use "@material/floating-label/mdc-floating-label";
 @use "@material/line-ripple/mdc-line-ripple";
 @use "@material/notched-outline/mdc-notched-outline";
 @use "@material/textfield/mdc-text-field";
+@use "@material/checkbox/mdc-checkbox";
 @import './variables';
+@import './form';
+
 
 body{
-  font-family: $fontFamily;
+  background-color: $bg-body;
 }
